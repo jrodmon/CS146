@@ -1,0 +1,11 @@
+    Thought Process:
+    convert all uppercase to lowercase & remove all non-alphanumeric characters
+        1. i think the method is called .toLower
+        2. to remove non-alphanumeric, add alphanumeric chars to a new string
+            a. convert the string into a character array and use isDigit and isLetter methods
+
+    reads the same forward and backwards
+    racecar
+        1. we can have two indices, where one iterates up the string, and the other down the string
+        2. compare the values at these two indices, if != return false
+        3. if the two indices overlap, that means it made it to the end. return true
