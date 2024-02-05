@@ -1,0 +1,4 @@
+Thought process:
+1. create a hashmap where you make the key of of each index be the difference of the target and the given index
+2. iterate thrtough the original array, checking for each of the keys in the hashmap
+  a. if the key is in the hashmap, then a solution exists.
