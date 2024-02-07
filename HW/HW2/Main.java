@@ -2,7 +2,7 @@ package org.example;
 
 public class Main {
   public static void main(String[] args) {
-    
+    System.out.print(firstBadVersion(20));  //not really sure how to check my code with this specific problem...
   }
 
   public int firstBadVersion(int endpoint) {
