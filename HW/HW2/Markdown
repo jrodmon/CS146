@@ -1,1 +1,14 @@
+find the bad version. I think this is something sorting-related
+thought process
+  1. we check the index at n/2
+  	a. if that version is bad. then that means it is in the left half
+  	b. if that version is good, then we go to the right half
+  2.1 if n/2 is bad, check n/2/2
+  2.2 if n/2 is good, check n/2/2 + n/2
+
+not sure how to write this in code tho
+
+(searched it up, this is a binary search)
+Quick tutorial: https://www.youtube.com/watch?v=MFhxShGxHWc
+
 
