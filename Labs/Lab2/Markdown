@@ -1,0 +1,5 @@
+Markdown
+0. check if the the two strings are the same length
+1. Sort each string by alphabetical order
+2. compare the new strings of s and t. If they are not equal return false.
+3. else, if it makes it to the end, return true.
