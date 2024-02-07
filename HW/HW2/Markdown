@@ -1,14 +1,53 @@
 find the bad version. I think this is something sorting-related
 thought process
   1. we check the index at n/2
-  	a. if that version is bad. then that means it is in the left half
+  	a. if that version is bad. then that means the bad version is in the left half
   	b. if that version is good, then we go to the right half
   2.1 if n/2 is bad, check n/2/2
   2.2 if n/2 is good, check n/2/2 + n/2
+  ... and so on until we find the bad version
 
 not sure how to write this in code tho
 
+
 (searched it up, this is a binary search)
 Quick tutorial: https://www.youtube.com/watch?v=MFhxShGxHWc
+
+After watching the video, key things to remember when doing a binary search
+1. we need a beginning and an end
+2. we need midpoint
+3. it involves recursion
+
+
+Pseudocode:
+# declare variables
+beginning = 0
+end = n - 1
+midpoint = beginning + end / 2
+
+# make use of API bool isBadVersion(version)
+# we want to run this function until the beginning overlaps with the end
+  while (beginning < end) 
+#if the midpoint is a badVersion, (true) that means we have to go the left
+    if (isBadVersion(midpoint)
+      end = midpoint
+      midpoint = beginning + end/2
+
+#if the midpoint is not the bad version, then that means that the bad version is further up.
+    else if (!isBadVersion(midpoint)
+      beginning = midpoint
+      midpoint = beginning + end/2
+
+    if (beginning == mid && isBadVersion(end)
+      return beginning + 1
+
+  
+
+
+
+
+
+
+
 
 
