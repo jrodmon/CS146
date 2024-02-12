@@ -10,7 +10,6 @@ MATRIX_MULTIPLY(A, B):
   for i from 1 to rows_A do: 
     for j from 1 to cols_B do: 
     sum ← 0 
-    for k from 1 to cols_A do: 
-      sum ← sum + A[i][k] * B[k][j] 
-    result[i][j] ← sum return result
-
+      for k from 1 to cols_A do: 
+        sum ← sum + A[i][k] * B[k][j] 
+      result[i][j] ← sum return result
