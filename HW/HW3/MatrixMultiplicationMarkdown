@@ -17,6 +17,9 @@ MATRIX_MULTIPLY(A, B):                               // c1
 N * N * N
 => O(N^3)
 
-Best Case: N^3
+Best Case: O(1)
+        The best case is when the matrix is a 1x1. In this case, it would run each line of code once
 Worst Case: N^3
+        The worst case is when the matrix is large.
 Average Case: N^3
+        The average case happens when it is not a 1x1 matrix
