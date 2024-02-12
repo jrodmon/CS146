@@ -15,7 +15,7 @@ MATRIX_MULTIPLY(A, B):                               // c1
       result[i][j] ← sum return result  // c8
 
 N^3 + N^2 + 2N + C
-=> N^3
+=> O(N^3)
 
 Best Case: N^3
 Worst Case: N^3
