@@ -1,9 +1,19 @@
-Insertion_Sort(A,n)
-  for i = 1 to n
-    key = A[i]
+Insertion_Sort(A,n)        // c1
+  for i = 1 to n           // N + 1
+    key = A[i]             // c2
     // Insert A[i] into the sorted subarray A[1:i - 1]
-    j = i - 1
-    while j >= 0 and A[j] > key
-      A[j + 1] = A[j]
-      j = j - 1
-    A[j + 1] key
+    j = i - 1              // c3
+    while j >= 0 and A[j] > key  //n
+      A[j + 1] = A[j]      // c4
+      j = j - 1            // c5
+    A[j + 1] = key         // c6
+
+line 2 and line 6
+(n+1) * n = n^2
+O(n^2)
+
+Best case: array is already sorted. 
+            O(n) because the algorithm will have to run through the whole array
+Worst Case: the array is backward
+            O(n^2) because the algorithm will have to will have to loop again once entering the while loop
+Average case: O(n^2)
