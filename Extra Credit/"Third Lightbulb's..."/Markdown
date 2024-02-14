@@ -5,7 +5,24 @@ fibonacci(n)
   secondValue = 1
 
   for (i = 1; i < n; i++)
-  
+    newValue = firstValue + secondValue
+    firstValue = secondValue
+    secondValue = newValue
+  return firstValue
+
+output:
+i = 1:                i=2:    i=3:    i=4:    i=5:
+newValue = 1          2       3       5       8
+firstValue = 0        1       2       3       5
+secondValue = 1       2       3       5       8        // we are off by one index, so let's just increase i from 1 to 2
+
+
+i = 2:                i=3:    i=4:    i=5:    i=6:
+newValue = 1          2       3       5       8
+firstValue = 0        1       2       3       5
+secondValue = 1       2       3       5       8
+
+
 
 
 0th index + 1st index = 2nd index
