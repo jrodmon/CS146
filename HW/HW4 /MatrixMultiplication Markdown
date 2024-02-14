@@ -1,1 +1,25 @@
+MATRIX_MULTIPLY(A, B):                               // c1
+  if columns(A) ≠ rows(B):                           // c2
+    raise ValueError("Matrix multiplication is not defined.") //c3 (bc of this, b has as many rows as a does columns)
 
+  rows_A ← number of rows in A       // c4
+  cols_A ← number of columns in A    // c5
+  cols_B ← number of columns in B    // c6
+  result ← matrix of size rows_A x cols_B filled with zeros // O(N * N)
+
+  for i from 1 to rows_A do:     // N
+    for j from 1 to cols_B do:   // N
+    sum ← 0                      // c7
+      for k from 1 to cols_A do:   // N
+        sum ← sum + A[i][k] * B[k][j]   // c8
+      result[i][j] ← sum return result  // c9
+
+N * N * N
+=> O(N^3)
+
+Best Case: O(1)
+        The best case is when the matrix is a 1x1. In this case, it would run each line of code once
+Worst Case: N^3
+        The worst case is when the matrix is large.
+Average Case: N^3
+        The average case happens when it is not a 1x1 matrix
