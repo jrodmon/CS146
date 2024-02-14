@@ -1,1 +1,21 @@
+create a recursive function that takes a parameter n that will run n times
+
+fibonacci(n)
+  firstValue = 0
+  secondValue = 1
+
+  for (i = 1; i < n; i++)
+  
+
+
+0th index + 1st index = 2nd index
+firstValue + secondValue = new value
+0 + 1 = 1
+
+1st index + 2nd index = 3rd index
+newValue + secondValue = newValue
+1 + 1 = 2
+
+if we input 5, we would want the fifth term (3)
+0, 1, 1, 2, 3
 
