@@ -9,7 +9,7 @@ Insertion_Sort(A,n)        // c1
     A[j + 1] = key         // c6
 
 line 2 and line 6
-(n+1) * n = n^2
+(n+1) * n = n^2 + n
 O(n^2)
 
 Best case: array is already sorted. 
