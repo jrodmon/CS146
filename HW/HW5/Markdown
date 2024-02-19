@@ -1,6 +1,7 @@
 Problem 1:
 
-1. T(N) = 2T(N-1) + 1
+1. 
+T(N) = 2T(N-1) + 1
 Master Theorem for "decreasing" function
 a = 2, b = 1, f(n) = 1
 Case 3: a > 1
@@ -11,7 +12,8 @@ Algebraic work:
 
 
 
-2. T(N) = 3T(N-1) + n
+2. 
+T(N) = 3T(N-1) + n
 Master Theorem for "decreasing" function
 a = 3, b = 1, f(n) = n
 Case 3: a > 1
@@ -21,30 +23,64 @@ Algebraic work
 
 
 
-3. T(N) = 9T(N/2) + n^2
+3. 
+T(N) = 9T(N/2) + n^2
 divide and conquer function
 a = 9, b = 2, f(n) = n^2
-Let's calculate n^logb(a)       // This is the same as n^(log base 2 of 9)
+Let's calculate n^log_b(a)       // This is the same as n^(log base 2 of 9)
 log 9 / log 2 = 3.169 ~ 3.17
-logb(a) = n^3.17                // where does this stand against f(n)?
+log_b(a) = n^3.17                // where does this stand against f(n)?
 
 n^(3.17 - e) = n^2    //Now we realize this is Case 1
-e = 1.17
-T(n) = Θ(f(n)) = Θ(n^2)      // <--- ANSWER
+e = 1.17  
+T(n) = Θ(f(n)) = Θ(n^(2 + 1.17))      
+T(n) = Θ(n^(3.17)            // <--- ANSWER
 
-Algebraic Work
+Recursion Tree Method
 
 
 
-4. T(N) = 100T(N/2) + n^(log2cn + 1)  (c is a constant)
+4. 
+T(N) = 100T(N/2) + n^(log_2cn + 1)  (c is a constant) (since c is a constant, we can just call it cn = n for large values)
 divide and conquer function
-a = 100, b = 2, f(n) = n^(log2cn + 1)
-Case
+a = 100, b = 2, f(n) = n^(log_2(n) + 1)  n to the power of log base 2 of c*n + 1
+Calculate n^logb(a)
+n^(log_2(100) + e)   vs n^(log_2(n) + 1)    
+n^(log_2(cn) + 1) is greater
+if the second one is greater, then that means that you have to add an e value to keep the two equations equal
+therefore
+// not sure about this ----------------------------------------
+T(n) = Θ(n^(log_2(cn) + 1)
+//-------------------------------------------------------------
+Recursion Tree Method
 
 
 
+5.
+T(N) = 4T(N/2) + n^2*logn
+a = 4, b = 2, f(n) = n^2*log(n)
+n^(log_2(4)) = n^2
+n^2 vs n^2*logn
+n^2 < n^2*logn
+what makes these two values equal?
+n^(2 + e) = n^2 * log(n)
+the LHS would need some additional e value to be equal to the value of the RHS
+therefore
+T(n) = Θ(n^2*logn)
+
+
+Recursion Tree Method
 
 
 
+6. 
+T(N) = 5T(N/2) + n^(2)/log(n)
+a = 5, b = 2, f(n) = n^2 / log(n)
+n^(log_2(5)) vs n^2 / log(n)
+n^2.32       vs log (n^2 / log(n))
+n^2.32       vs 2log(n) - log(log(n))
+n^2.32 > 2log(n)
+The LHS would need 
+T(n) = n^2.32
 
 
