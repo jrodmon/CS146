@@ -1,0 +1,21 @@
+yetAnotherFunc(n): 
+  if n > 1: 
+    for(i=0;i<10n;i++)    // loops 10n times
+      doSomething;        // 1
+    yetAnotherFunc(n/2);  // loops 5n times
+    yetAnotherFunc(n/2);  // loops 5n times
+
+Master's Theorem
+T(n) = 2T(N/2) + 20n
+a=2, b=2, f(n)=20n
+
+n^(log_2(2)) = n^1 = n
+
+compare f(n) with N^(log_b(a))
+20n > n 
+f(n) is greater than N^(log_b(a)) therefore we use case 3
+N^log_b(a) would need more help "e" to be equal to 20n
+
+20n + 2T(n/2)
+20n + n^(log_2(n))
+O(nlog(n))  // <--- ANSWER
