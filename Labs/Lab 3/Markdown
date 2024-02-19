@@ -1,0 +1,53 @@
+Problem 1:
+1. n^3 because it has a larger power
+
+2. n^2(log n) is greater than n(log(n))^10
+	if we take the log of both functions
+	log ( n^2(logn) ) 		vs 	log ( n (log(n) ) ^ 10 )
+	log (n^2) + log( log (n) ) 	vs 	log (n) + log ( log (n) ) ^ 10)
+	2 log (n) + log ( log (n) ) 	vs 	log (n) + log ( 10 log(n) )
+	looking at the two largest terms
+	2 log (n) 	vs 	log (n)
+	larger coefficient is 2 log (n)
+	therefore n^2(log n) is greater than    // #2 Answer
+
+3. n^(log(n)) vs 2 ^ (sqrt(n))
+  log (n^ (log(n))		vs 	log (2 ^ sqrt(n) )
+  log(n) * log(n)		vs 	sqrt(n) * log (2)
+  log(n) ^2		vs 	sqrt(n) * log (2)
+  lets take the log again
+  2 * log (log (n))	vs 	log ( sqrt(n) ) + log (log (2) )
+              			vs 	log ( sqrt (n)) + log log 2
+		              	vs 	½ log (n)
+	2 ^ (sqrt (n)) is greater than n^(log(n))     // #3 answer
+
+4. 2^(2n) is greater than 2^n
+	because it has a larger exponent
+
+
+
+Problem 2:
+isPrime(n):                     // 1
+  for(i = 2, i*i <= n; i++) {   // ????
+    if(n % i == 0) {            // 1
+      return false              // 1
+    }                           // -
+  return true                   // 1
+
+1. Best case O(1)
+    This occurs when n is an even number
+
+2. Worst case?
+    This is when n is a prime number, so it will iterate until i > n
+    i * i = n
+    i^2 = n      //now we solve for i
+    i = sqrt(n)
+    O(sqrt(n))
+
+3. Average case?
+    O(sqrt(n))
+    
+
+
+
+
