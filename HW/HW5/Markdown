@@ -1,1 +1,50 @@
+Problem 1:
+
+1. T(N) = 2T(N-1) + 1
+Master Theorem for "decreasing" function
+a = 2, b = 1, f(n) = 1
+Case 3: a > 1
+T(n) = O(n^k * 2^(n/1))
+T(n) = O(n^k * 2^n)    // <--- ANSWER
+
+Algebraic work:
+
+
+
+2. T(N) = 3T(N-1) + n
+Master Theorem for "decreasing" function
+a = 3, b = 1, f(n) = n
+Case 3: a > 1
+T(n) = O(n^k * 3^n)    // <--- ANSWER
+
+Algebraic work
+
+
+
+3. T(N) = 9T(N/2) + n^2
+divide and conquer function
+a = 9, b = 2, f(n) = n^2
+Let's calculate n^logb(a)       // This is the same as n^(log base 2 of 9)
+log 9 / log 2 = 3.169 ~ 3.17
+logb(a) = n^3.17                // where does this stand against f(n)?
+
+n^(3.17 - e) = n^2    //Now we realize this is Case 1
+e = 1.17
+T(n) = Θ(f(n)) = Θ(n^2)      // <--- ANSWER
+
+Algebraic Work
+
+
+
+4. T(N) = 100T(N/2) + n^(log2cn + 1)  (c is a constant)
+divide and conquer function
+a = 100, b = 2, f(n) = n^(log2cn + 1)
+Case
+
+
+
+
+
+
+
 
