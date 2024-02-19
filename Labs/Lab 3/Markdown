@@ -17,8 +17,9 @@ Problem 1:
   log(n) ^2		vs 	sqrt(n) * log (2)
   lets take the log again
   2 * log (log (n))	vs 	log ( sqrt(n) ) + log (log (2) )
-              			vs 	log ( sqrt (n)) + log log 2
-		              	vs 	½ log (n)
+              			vs 	log ( sqrt (n)) + log(log (2))
+we can ignore the log(log(n)) and log(log(2)) on both sides bc they are insignificant compared to infinity
+  2			vs 	½ log (n)
 	2 ^ (sqrt (n)) is greater than n^(log(n))     // #3 answer
 
 4. 2^(2n) is greater than 2^n
