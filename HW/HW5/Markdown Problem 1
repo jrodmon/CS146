@@ -1,11 +1,10 @@
-Problem 1:
-
 1. 
 T(N) = 2T(N-1) + 1
 Master Theorem for "decreasing" function
 a = 2, b = 1, f(n) = 1
-T(n) = O(1 * 2^n)    // <--- ANSWER
-T(n) = O(2^n)
+T(n) = O(f(n)^k * a^(n/b))
+T(n) = O(1^k * 2^n)    
+T(n) = O(2^n)      // <--- ANSWER
 
 Algebraic work:
 1. T(N) = 2T(N-1) + 1
@@ -17,12 +16,12 @@ T(N) = 4(2T(N-3) +2) + 2) + 1
 T(N) = 8T((N-3)+4) + 2 + 1
 T(N) = 2^3 T(N-3) + 2^2 + 2^1 + 2^0
 using k
-T(N) = 2^k T(N-k) + 2^(k-1) + 2^(k-2) + 2^1 + 2^0
+T(N) = 2^k T(N-k) + 2^(k-1) + 2^(k-2) + ... + 2^1 + 2^0
                     these values are constants, which when scaled to infinity are negligible
 let's assume n-k = 0 and T(0) = 1
 T(N) = 2^k T(N-k) + C
 T(N) = 2^k T(0)
-T(N) = 2^k
+T(N) = 2^k          // <--- Work checked
 
 
 
@@ -34,8 +33,24 @@ Case 3: a > 1
 T(n) = O(n^k * 3^n)    // <--- ANSWER
 
 Algebraic work
-1. 3T(N-1) + n
-2. 3 (3T(N-2)
+1. T(N) = 3T(N-1) + n
+2. T(N-1) = 3T(N-2) + n
+3. T(N-2) = 3T(N-3) + n
+sub all values into T(N)
+T(N) = 3(3(3T(N-3) + n) + n) + n
+T(N) = 9(3T(N-3) + 3n) + 3n) + n
+T(N) = 27T(N-3) + 9n + 3n + n
+T(N) = 3^3T(N-3) + 3^(2)*n + 3^(1)*n + 3^(0)*n
+apply k logic
+T(N) = 3^kT(N-k) + 3^(k-1)*n + 3^(k-2)*n + ... + 3^1*n + 3^0*n
+Assume N-k = 0, and T(0) = 1
+N = k
+T(N) = 3^kT(0) + 3^(k)*n
+T(N) = 3^k*1 + 3^k * n
+T(N) = 3^k + 3^k*n
+        ^ this value is negligible when scaled to infinity
+Θ(3^k * n)
+
 
 
 3. 
