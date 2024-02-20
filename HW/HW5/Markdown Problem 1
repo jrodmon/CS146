@@ -102,7 +102,6 @@ Therefore
 
 
 
-
 5.
 T(N) = 4T(N/2) + n^2*logn
 a = 4, b = 2, f(n) = n^2*log(n)
@@ -113,20 +112,39 @@ what makes these two values equal?
 n^(2 + e) = n^2 * log(n)
 the LHS would need some additional e value to be equal to the value of the RHS
 therefore
-T(n) = Θ(n^2*logn)
+T(n) = Θ(n^2*logn)        // <--- MASTERS THEOREM ANSWER
 
-
-
+algebraically
+    0. T(N) = 4T(N/2) + N^2*logn
+    1. T(N/2) = 4T(N/2/2) + (N/2)^2*logn)
+       T(N/2) = 4T(N/4) + (N/2)^2*logn)
+    2. T(N/4) = 4T(N/4/2) + (N/4)^2*logn
+       T(N/4) = 4T(N/8) + (N/4)^2*logn
+       T(N) = 4T((4T(4T(N/8) + (N/4)^2*logn) + (N/2)^2*logn)) + N^2*logn
+       T(N) = 4((4^2T(N/8) + 4(N/4)^2*logn) + (N/2)^2*logn)) + N^2*logn
+       T(N) = 4^3T(N/8) + 4^2(N/4)^2*logn + 4(N/2)^2*logn +N^2*logn
+      The most dominant term is N^2*logn
+therefore
+Θ(n^2*logn)         // <--- algebraic answer
 
 
 6. 
 T(N) = 5T(N/2) + n^(2)/log(n)
-a = 5, b = 2, f(n) = n^2 / log(n)
-n^(log_2(5)) vs n^2 / log(n)
-n^2.32       vs log (n^2 / log(n))
-n^2.32       vs 2log(n) - log(log(n))
+a = 5, b = 2, f(n) = n^2/log(n)
+    //n^(log_b(a)) vs f(n)
+n^(log_2(5)) vs n^2/log(n)
 n^2.32 > 2log(n)
-The LHS would need 
-T(n) = n^2.32
+T(n) = n^2.32          // <--- MASTERS THEOREM ANSWER
 
+    0. T(N) = 5T(N/2) + n^(2)/log(n)
+    1. T(N/2) = 5T(N/2/2) + n^(2)/log(n)
+       T(N/2) = 5T(N/4) + n^(2)/log(n)
+    2. T(N/4) = 5T(N/4/2) + n^(2)/log(n)
+       T(N/4) = 5T(N/8) + n^(2)/log(n)
+T(N) = 5(5(5T(N/8) + n^(2)/log(n)) + n^(2)/log(n)) + n^(2)/log(n)
+     = 5((25T(N/8) + 5n^(2)/log(n)) + n^(2)/log(n)) + n^(2)/log(n)
+     = 125T(N/8) + 25^(2)/log(n)) + 5n^(2)/log(n)) + n^(2)/log(n)
+n^(2)/log(n) is the most dominant term
+therefore
+Θ(n^2/logn) 
 
