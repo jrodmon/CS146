@@ -63,7 +63,7 @@ log_b(a) = n^3.17                // where does this stand against f(n)?
 n^(3.17 - e) = n^2    //Now we realize this is Case 1
 e = 1.17  
 T(n) = Θ(f(n)) 
-T(n) = Θ(n^2)            // <--- ANSWER
+T(n) = Θ(n^2)            // <--- ANSWER FROM MASTERS
 
 Algebra
 T(N) = 9T(N/2) + n^2
@@ -74,7 +74,7 @@ T(N) = 81T((N/4) + 9((n/2)^2)) + n^2
 T(N) = 9^kT((N/4) + 9((n/2)^k + n^2
 The dominating element in this is n^2
 Therefore 
-Θ(N^2)
+Θ(N^2)          // <--- algebraically checked answer
 
 
 4. 
@@ -88,7 +88,7 @@ RHS is greater, so we have to add an e to the LHS to keep them equal.
 This is CASE 3:
 Θ(f(n))
 Θ(n^(log_2(n)+1)
-Θ(n^(log_2(n)))
+Θ(n^(log_2(n)))    // <--- MASTER THEOREM ANSWER
 
 Algebraically
     0. T(N) = 100T(N/2) + N^(log_2(cn)+1)
@@ -98,7 +98,9 @@ Algebraically
        T(N/4) = 100^3*T(N/8) + 100(N/4)^(log_2(cn)+1)) + 100(N/2)^(log_2(cn)+1) + N^(log_2(cn)+1)
 The dominating term in this is the final term, "N^(log_2(cn)+1)
 Therefore 
-Θ(N^(log_2(cn)+1)
+Θ(N^(log_2(cn)+1)   // <--- algebraically checked answer
+
+
 
 
 5.
@@ -114,7 +116,6 @@ therefore
 T(n) = Θ(n^2*logn)
 
 
-Recursion Tree Method
 
 
 
