@@ -1,0 +1,8 @@
+Thought Process:
+if it is similar to two sum,
+we need to take the target minus a value, and use value as a hashkey
+
+we can do target1 = b - a
+          target2 = c - b
+          target3 = c - a
+
