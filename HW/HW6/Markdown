@@ -57,6 +57,8 @@ i = first iteration
 j = i + 1                      // 
 k = nums.length() - 1          // end of sorted array
 
+
+
 PSEUDOCODE
 loop for (i-2)                    //bc i want to have 3 terms for the last sum. i j and k
           check for dupes
@@ -71,6 +73,9 @@ loop for (i-2)                    //bc i want to have 3 terms for the last sum. 
                               k--
                     else if (sum == 0)        //if sum is 0, answer is correct, add to result and move to next set of values
                               result.add(i,j,k)
-                              
+                              j++
+                              k--
+                              remove dupes of j and k
+return result
 
 
