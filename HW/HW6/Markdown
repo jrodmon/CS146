@@ -1,8 +1,63 @@
 Thought Process:
-if it is similar to two sum,
-we need to take the target minus a value, and use value as a hashkey
+if it is similar to the twoSum problem,
+we need to take the target minus some value, and use that value as a hashKey
+
 
 we can do target1 = b - a
           target2 = c - b
           target3 = c - a
+
+OR can just do two sum again, except for the first term, throw in a for loop and iterate through each element in the array.
+Time complexity: twoSum * n
+
+should sort the array to keep things more organized
+how are we supposed to track if there are any duplicates?
+  - delete the value from the original array if it gets used?
+  - in the sorted array, compare the sequential values, and mix it in with a counter
+
+//SAMPLE//
+Input: nums = [-5,0,5,10,-10,0] 
+sorted nums = [-10, -5, 0, 0, 5, 10]
+
+if we run an initial loop with index i, the last chance to form a triplet is the 3 from last
+[-10, -5, 0, 0, 5, 10]
+             ^ this value (nums.length() = 6) we want to loop until the fourth index (so nums.length() - 2) 
+
+we don't need j to compare anything before i.
+
+[-10, -5, 0, 0, 5, 10]
+  i    j            k
+[-10, -5, 0, 0, 5, 10]
+  i       j     k
+[-10, -5, 0, 0, 5, 10]
+  i         jk                    // j = k --> exit
+
+[-10, -5, 0, 0, 5, 10]
+       i  j         k
+[-10, -5, 0, 0, 5, 10]
+       i     j  k
+[-10, -5, 0, 0, 5, 10]
+       i     k  j                    // j > k --> exit  
+
+
+
+i = first iteration
+j = i + 1                      // 
+k = nums.length() - 1          // end of sorted array
+
+
+for (int i = 0; i<nums.length() -2; i++) {
+          while (j < k) {
+                    result = nums[i] + nums[j] + nums[k];
+                    if (result == 0) { 
+                    //IDK HOW TO PUT THIS INTO AN ARRAY
+                    j++
+                    k--
+          }
+                    
+          
+}
+
+
+
 
