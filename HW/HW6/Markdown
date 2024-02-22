@@ -1,19 +1,12 @@
 Thought Process:
-if it is similar to the twoSum problem,
-we need to take the target minus some value, and use that value as a hashKey
 
-
-we can do target1 = b - a
-          target2 = c - b
-          target3 = c - a
-
-OR can just do two sum again, except for the first term, throw in a for loop and iterate through each element in the array.
-Time complexity: twoSum * n
+can just do two sum again, except for the first term, throw in a for loop and iterate through each element in the array.
 
 should sort the array to keep things more organized
 how are we supposed to track if there are any duplicates?
   - delete the value from the original array if it gets used?
   - in the sorted array, compare the sequential values, and mix it in with a counter
+  - (winner) make a starting point, and iterate through the rest of the array
 
 //SAMPLE//
 Input: nums = [-5,0,5,10,-10,0] 
@@ -23,15 +16,18 @@ if we run an initial loop with index i, the last chance to form a triplet is the
 [-10, -5, 0, 0, 5, 10]
              ^ this value (nums.length() = 6) we want to loop until the fourth index (so nums.length() - 2) 
 
-we don't need j to compare anything before i.
+we don't need j to compare anything before I.
 
+FIRST LOOP
 [-10, -5, 0, 0, 5, 10]
   i    j            k
+
 [-10, -5, 0, 0, 5, 10]
   i       j     k
 [-10, -5, 0, 0, 5, 10]
   i         jk                    // j = k --> exit
 
+SECOND LOOP
 [-10, -5, 0, 0, 5, 10]
        i  j         k
 [-10, -5, 0, 0, 5, 10]
@@ -40,24 +36,41 @@ we don't need j to compare anything before i.
        i     k  j                    // j > k --> exit  
 
 
+//what if we had two of the same number?
+[-10, -10, -5, -5, 0, 0, 5, 10, 10]
+  i    j                         k            // -10 how do we get this to 0? EITHER make k more positive or j less negative
+                                              // k is already as positive as it gets
+                                              // increment j to the next spot
+[-10, -10, -5, -5, 0, 0, 5, 10, 10]                    //flip the comparisons if our sum ends up being positive
+  i         j                    k
+          .
+          .
+          . 
+
+[-10, -10, -5, -5, 0, 0, 5, 10, 10]
+       i    j                k          // there is no need to have to check this for triplet, because we already checked 10
+
+if(nums = 0 || nums[i] != nums[i-1]) //will run the code if it is the first element, or if the current index is not the same as the previous index 
+
 
 i = first iteration
 j = i + 1                      // 
 k = nums.length() - 1          // end of sorted array
 
+PSEUDOCODE
+loop for (i-2)                    //bc i want to have 3 terms for the last sum. i j and k
+          check for dupes
+          j = i+1
+          k = nums-1
 
-for (int i = 0; i<nums.length() -2; i++) {
-          while (j < k) {
-                    result = nums[i] + nums[j] + nums[k];
-                    if (result == 0) { 
-                    //IDK HOW TO PUT THIS INTO AN ARRAY
-                    j++
-                    k--
-          }
-                    
-          
-}
-
-
+          while(j < k) //when they do not overlap
+                    int sum = i + j + k
+                    if (sum < 0)           //if sum is negative, reduce magnitude of j
+                              j++
+                    else if (sum > 0)          //if sum is positive reduce magnitude of k
+                              k--
+                    else if (sum == 0)        //if sum is 0, answer is correct, add to result and move to next set of values
+                              result.add(i,j,k)
+                              
 
 
