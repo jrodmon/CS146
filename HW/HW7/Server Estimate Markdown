@@ -1,1 +1,23 @@
-asd
+{0,30}, {5,10}, {15,20}
+0  ------------------------------ 30
+      5 ----- 10
+              15 ----- 20   
+start 0
+  count++
+start 5 
+  check if there is currently a meeting
+  if currently a meeting (how do i check)    //focus on implementing this part now
+      count++
+      if highestCount<count)
+          highestCount = count
+end 10
+  count--
+start 15
+  count++
+end 20
+  count--
+
+sort the start time and sort the end times
+  for i in meeting
+    current = startTime[i]
+    
