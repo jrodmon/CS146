@@ -1,3 +1,25 @@
+{0,1} {1,2} {2,3}
+0 ----- 1
+      1-----2
+            2-----3
+
+create 2 arrays, 1 for start times and 1 for end times
+      sort startTime
+      sort endTime
+
+startTime: 0,1,2
+endTime:   1,2,3
+i = 0
+      0 < 1 count++
+i = 1
+      1 < 1 false go to the next end time (do not inc count)
+      1 < 2 
+i = 2
+      2 < 2 false go to the next end time (do not inc count)
+      2 < 3
+i = 3 exit loop
+
+
 {0,30}, {5,10}, {15,20}, {7,25}
 0  ------------------------------ 30
          7------------------25
@@ -5,9 +27,6 @@
               15 ----- 20   this should return 3
 
 
-create 2 arrays, 1 for start times and 1 for end times
-      sort startTime
-      sort endTime
 
 startTime: 0,5,7,15
 endTime:   10,20,25,30
@@ -19,21 +38,38 @@ i = 1
 i = 2
       7 < 10 count++ 3
 i = 3
-      15< 10 invalid go to next endTime
+      15< 10 false, go to next endTime
 i = 4 exit loop
 
-{0,1} {1,2} {2,3}
-0 ----- 1
-      1-----2
-            2-----3
-startTime: 0,1,2
-endTime:   1,2,3
-i = 0
-      0 < 1 ++count
-i = 1
-      1 < 1 false go to the next end time (do not count)
-      1 < 2 
-i = 2
-      2 < 2 false go to the next end time (do not count)
-      2 < 3
-i = 3 exit loop
+
+WAIT what if a meeting ends, will it still run count++?
+0--------------------------------------------50
+   5 ------ 10
+                        25 ----------35     
+                             30 --- 34     #should result in 3
+startTime = 0, 5, 25, 30
+endTime   = 10, 35, 34, 35
+0 < 10 count ++
+5 < 10 count ++
+25 > 10 endPoint++
+30 < 34 count++        count = 3
+
+we should loop through the startTime, and increment a counter whenever the start is less than the endTime
+whenever the statement is false, we should move the endTime to the next available value.
+
+Psuedocode:
+int numRooms = 0
+int[] startTime = ...
+int[] endTime = ...
+int endPoint = 0
+
+for i in startTime
+         if startTime[i] < endTimes[endPoint]         # loop through and increment when the startTime is less than the end Time
+                  numRooms++
+         else         #if the endTime is greater than the starting time, a meeting ended, go onto the next endTime
+                  endPoint++
+         return numRooms
+
+
+
+
