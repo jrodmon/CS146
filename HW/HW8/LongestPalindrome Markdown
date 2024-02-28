@@ -1,0 +1,11 @@
+first thing to note is that if length of word is odd or even
+if odd something special with center
+if even the two middle letters are the same
+
+First idea is to sort the string alphabetically
+have two pointers
+place one letter at the beginning the same letter at the end and reduce the count of that letter
+if only one of the letters is left, check if it is the center, if not trash the letter
+repeat this 
+WAIT WE DONT HAVE TO FIND THE LONGEST PALINDROME, JUST THE LENGTH
+
