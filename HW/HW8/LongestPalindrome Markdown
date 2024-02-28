@@ -15,3 +15,43 @@ if it is an even length word, the longest palindrome
 even amount of all letters
 if it is an odd length word, have even amount of letters and one character will have an odd amount
 look back at the notes on counting sort
+
+
+make an array with all upper and lower case characters
+iterate through the string and count increase counter for each letter 
+// ACTUALLY USE HASHMAP
+
+create a hashmap with the character as a key pointing to a value 
+loop through string using each character as a key.
+  get the hashvalue, increment it, put it back in that spot.
+
+  iterate through hashmap and check if character counts are even
+    if character count is even
+      count += hashvalue/2
+    else if characterCount is odd
+      count += hashvalue /2
+      // add a boolean here
+      bool isOdd = true
+
+    if (isOdd)
+      count++
+  return count
+
+
+abccccdd
+dccaccd = 7
+a = 1
+b = 1
+c = 4
+d = 2
+4 + 2 + 1
+
+//Problem: what if a character has an odd count that isnt 1
+
+aabbbbbdd
+adbbbbbda = 9
+a = 2
+b = 5
+d = 2
+2 + 4 + 2 ~
+
