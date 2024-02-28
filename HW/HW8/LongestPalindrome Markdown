@@ -7,5 +7,11 @@ have two pointers
 place one letter at the beginning the same letter at the end and reduce the count of that letter
 if only one of the letters is left, check if it is the center, if not trash the letter
 repeat this 
-WAIT WE DONT HAVE TO FIND THE LONGEST PALINDROME, JUST THE LENGTH
 
+
+WAIT WE DONT HAVE TO FIND THE LONGEST PALINDROME, JUST THE LENGTH
+ok so lets note even or odd words
+if it is an even length word, the longest palindrome
+even amount of all letters
+if it is an odd length word, have even amount of letters and one character will have an odd amount
+look back at the notes on counting sort
