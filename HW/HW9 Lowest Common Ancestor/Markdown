@@ -1,1 +1,5 @@
-given two nodes, find the node that splits the to
+given two nodes, find the parent node which is closest to both the two leaf nodes
+
+
+
+
