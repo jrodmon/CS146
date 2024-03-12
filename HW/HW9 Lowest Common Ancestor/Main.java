@@ -7,8 +7,8 @@ class Main {
         root.right.left = new TreeNode(5);
         root.right.right = new TreeNode(9);
 
-        TreeNode p = root.left;
-        TreeNode q = root.left.left;
+        TreeNode p = root.left;         //3
+        TreeNode q = root.left.left;    //1
 
         System.out.println(lowestCommonAncestor(root, p, q).val);
     }
@@ -17,19 +17,18 @@ class Main {
             return null;
         }
 
-        //if p and q are less than the root, run the method again but with the new root as the right child
+        //if p and q are less than the root, run the method again but with the new root as the left child
         if (p.val < root.val && q.val < root.val){
-            lowestCommonAncestor(root.right, p, q);
+            return lowestCommonAncestor(root.left, p, q);
         }
-        //if p and q are greater than the root, recursive with new root as left child.
+        //if p and q are greater than the root, recursive with new root as right child.
         else if (p.val > root.val && q.val > root.val) {
-            lowestCommonAncestor(root.left, p, q);
+            return lowestCommonAncestor(root.right, p, q);
         }
         //if one of the two nodes is less and the other greater than root, the current node is the LCA
         else {
             return root;
         }
-        return root;
     }
 
     public static class TreeNode {
@@ -48,4 +47,4 @@ class Main {
         }
     }
 
-    }
+}
