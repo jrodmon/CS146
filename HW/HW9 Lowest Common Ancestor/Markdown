@@ -1,5 +1,35 @@
 given two nodes, find the parent node which is closest to both the two leaf nodes
 
+we are given two nodes p and q
 
+                      4
+                  /      \
+                3         8
+              /        /      \
+            1         5        9
 
+input p = 3, q = 1
+3 < 4 left 
+  3==3 found
+1 < 4 left
+1 < 3 left (node q)
+  1==1 found
+if one of the nodes is a parent of the other, then the LCA is the parent
+
+input p=1, q=5
+
+lets traverse through the tree and look for patterns
+search for p (1):
+1 < 4
+1 < 3
+root -> left -> left
+search for q (5):
+5 > 4
+5 < 8
+root -> right -> left
+
+if the root is greater than both p and q, make the new root the right child
+if the root is less than p and q, new root = left child
+if one leaf is greater and one leaf is less than root, that means the root splits apart and is therefore the LCA 
+  repeat this using recursion
 
