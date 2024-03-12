@@ -1,1 +1,25 @@
 Start with a binary tree
+hint: use recursion.
+We run a recursive function to the last leaf nodes
+
+                    1
+              /           \
+            2              8
+          /   \          /   \
+        3      4        5     6
+
+lets just look at a subtree and go from there
+            2
+          /   \
+        3      4
+
+root = 2
+root.left = 3
+root.right = 4
+  WE WANT
+root = 2
+
+temp = root.left
+root.right = root.left
+root.left = temp
+then repeat this
