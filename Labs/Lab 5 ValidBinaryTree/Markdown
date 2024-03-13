@@ -1,1 +1,18 @@
 a valid binary tree has all the left children nodes less than the parent, and right children greater than parent.
+traverse through the tree, checking if each subtree follows this rule
+         4
+    3         8
+  1          5  9
+
+lets look at this subtree 
+      8
+    5   9
+
+if root == null
+  return true                //returns true, bc it made it to the end of the tree without triggering a false.
+
+if root.left.val > root.val || root.right.val < root.val
+  return false                    // this implementation assumes that there are no repeat nodes
+                                  //if it is true, run recursively with the child node acting as the new root.
+if root.left.val < root.val
+  return isValid(root.left) && isValid(root.right)      //checks if both the left and right roots are valid. if one of them isnt it return false.
