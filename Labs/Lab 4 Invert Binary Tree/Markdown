@@ -22,4 +22,6 @@ root = 2
 temp = root.left
 root.right = root.left
 root.left = temp
-then repeat this
+NOW node2 should be linked to nodes 4and3 regardless of where node 2 goes.
+then repeat this for all nodes
+(also if it is a leaf node, then its children will be null)
