@@ -14,4 +14,10 @@ root.right.right
 for grandchildren
 "can i keep track of how many .left or .rights are used?"
 [after looking back at the slides, this is just BFS]
+we start at root node
+1. visit starting node. Mark as visited
+2. discover the connected nodes and add them to the queue
+3. while the queue is not empty dequeue the next element and add the connected nodes to the queue
+Repeat until reaching the end
 
+we need a visited array and a queue data structure
