@@ -1,3 +1,17 @@
-aksjdhljashdl
+                 .4.
+           .3          .8.
+         1           5     9
+output: [[4],[3,8],[1,5,9]]
 
+start with root (this is always 1)
+root.left
+root.right
+for the children
+
+root.left.left
+....
+root.right.right
+for grandchildren
+"can i keep track of how many .left or .rights are used?"
+[after looking back at the slides, this is just BFS]
 
