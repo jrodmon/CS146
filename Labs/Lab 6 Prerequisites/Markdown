@@ -1,1 +1,21 @@
-graph problem. im assuming use DFS
+graph problem. first idea is to use DFS.
+Using DFS we have a starting point (the course we want to take)
+and we have the next node (the prerequisite)
+Then we check if the prerequisite has any further prerequisites.
+
+Basically our goal is to make sure that a prereq for a class does not also have a prereq
+
+Input: numCourses = 2, prerequisites = [[1,0]]
+Want to take Course 1
+Check for prereq Course 0
+Check if Course 0 has any prerequisites
+It does not so it is possible
+
+Input: numCourses = 2, prerequisites = [[1,0],[0,1]]
+Output: false
+1 --> 0
+0 --> 1
+1 is required to take 0 but 0 is required to take 1, so it is impossible
+in DFS 1 is already placed in visited, so if a prereq points to it return false
+
+
