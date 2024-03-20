@@ -1,0 +1,63 @@
+Flood fill (like the MS paint tool)
+we want adjacent values which are equal to each other to be replaced by a new value.
+
+
+Input: image = [[1,1,1],
+                [1,1,0],
+                [1,0,1]], sr = 1, sc = 1, color = 2
+
+Output:        [[2,2,2],
+                [2,2,0],
+                [2,0,1]]
+THE IDEA:
+initital color: 1 --> 1 ---> 1 ---> out of bounds
+                V     V     X
+                1 --> 1 --> 0 
+                V     X
+                1 --> 0(not the same as initialdont continue)
+(0,0) checks (1,0) ✔
+(0,0) checks (0,1) ✔
+(1,0) checks (2,0) ✔
+(1,0) checks (0,1) ✔
+(2,0) checks (3,0) X bc null
+(2,0) checks (2,1) X bc 0 does not equal starting value of 1
+PATTERN: We have a starting point, then we check (c+1, r) and (c, r+1) for if it equals the starting color
+
+
+we can use either dfs or bfs to solve this problem, lets use bfs
+   Variables: sr, sc, color, image[][]
+new variabls: initialColor, queue, visited[][], directions[][], r, c
+
+PSUEDOCODE:
+if image is null:
+  return image
+
+initialColor = image[sr][sc]
+if originalColor == color:
+  return image
+//^ two special cases for when nothing is changed
+
+//create queue and visited
+queue = new linkedlist
+boolean visited = [image.length][image[0].length] //makes visited a 2d array the size of image
+directions[][] = [[1,0], [-1,0], [0,1], [0,-1]]
+// ^to traverse the 2d array down, up, right, left
+
+queue.push[sr,sc]
+visited[sr][sc] = true;
+
+while the queue isnt empty
+  remove the currentPixel from the queue
+  change the color of the current pixel to the new color
+  // from this current pixel, we want to check in all 4 directions
+  // we can do this with an enhanced for loop and the directions[][] array
+    for (int[] dir : directions) {        //for iterations 1-4, dir will be [1,0], [-1,0], [0,1], [0,-1]
+      int newRow = row + dir[0];          // the first value in dir for each iteration
+      int newCol = col + dir[1];          // the second value in dir for each iteration
+      if (newpixel is within the bounds of image, has not been visited, == initialColor)
+        add the newPixel to the queue
+        mark the currentPixel as visited
+
+return image
+        
+
