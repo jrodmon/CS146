@@ -19,3 +19,11 @@ Output: false
 in DFS 1 is already placed in visited, so if a prereq points to it return false
 
 
+TOPOLOGICAL SORT
+1. Create the adjacency matrix
+2. add all nodes with in-degree 0 to a queue
+3. While the queue is not empty perform the following actions
+  a. remove a node from the queue
+  b. for each outgoing edge from the node, decrement the in-degree of destination node by 1
+  c. if the in-degree of a destination node becomes 0, add it to the queue
+If it is not able to do this then that means that the prerequisite chain has a cycle
