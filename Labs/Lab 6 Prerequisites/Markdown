@@ -1,9 +1,9 @@
-graph problem. first idea is to use DFS.
+graph problem. idea is to use DFS and topological sort.
 Using DFS we have a starting point (the course we want to take)
 and we have the next node (the prerequisite)
 Then we check if the prerequisite has any further prerequisites.
 
-Basically our goal is to make sure that a prereq for a class does not also have a prereq
+Basically our goal is to make sure that a prereq for a class does not also have a prereq by using topological sort
 
 Input: numCourses = 2, prerequisites = [[1,0]]
 Want to take Course 1
