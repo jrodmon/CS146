@@ -1,7 +1,35 @@
 This is a graph problem involving the cheapest weighted edges which are also bidirectional.
 
-We can use Kruskal's algorithm.
+We can use Kruskal's algorithm and a minimum spanning tree.
 
 First thoughts:
+0. Sort edges by cost.
 1. Pick the minimum weight pipe (edge).
-2. 
+2. Adding the wells
+    a. Compare the cost of the two wells
+    b. Add the cheaper well to the MST
+    c. If the pipe (edge) is less than the well in the second house
+        i. add the pipe
+    d. else
+        i. add the well to the second node
+WAIT SCRATCH THIS IDEA^
+
+NEW IDEA Summary: Create MST then make comparisons between creating piping or wells in the houses
+1. Sort Edges by Cost
+2. Run Kruskal's Algorithm
+    a. While loop
+        i. Select cheapest edge
+       ii. If the two connected nodes are already in the MST
+            1. do not add edge
+      iii. else 
+            1. Add to the MST
+3. Sort Houses by the cheapest cost wells
+4. Start from the cheapest well
+5. Traverse through the MST comparing the cost of adding wells to the houses with the cost of the pipe
+    a. If the pipe is less than the cost of adding the well
+        i. add pipe
+    b. else (pipe is equal to or more than the cost of the well)
+        ii. Create a well in the house (totalCost)
+
+
+GEEKSFORGEEKS there's something involving union
