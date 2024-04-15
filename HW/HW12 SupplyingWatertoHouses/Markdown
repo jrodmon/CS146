@@ -1,0 +1,7 @@
+This is a graph problem involving the cheapest weighted edges which are also bidirectional.
+
+We can use Kruskal's algorithm.
+
+First thoughts:
+1. Pick the minimum weight pipe (edge).
+2. 
