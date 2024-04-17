@@ -1,2 +1,15 @@
 Floyd Warshalls
 fill out a matrix	 compare each value to distanceThreshold
+
+The basic idea that i recall from lecture is this:
+    is it shorter to travel from i to k to j 
+    than it is to travel from just i to j
+    where k is going to be acting as the intermediate vertex 
+
+Floyd Warshalls algorithm
+for (k=1; k <= n; k++)
+    for (i=1; 9 <=n; i++) 
+        for (j=1; k<=n; j++)
+            A[i,j] = min(A[i,j], A[i,k] + A[k,j])
+Using k as the intermediate node, we make comparisons between the edges of i and j to the sum of the edges of i,k and k,j
+
