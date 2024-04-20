@@ -24,6 +24,13 @@ NEW IDEA Summary: Create MST then make comparisons between creating piping or we
       iii. else 
             1. Add to the MST
 3. Sort Houses by the cheapest cost wells
+
+4? Introduce a dummy node and connect it to each of the nodes on the MST
+    a. connect these dummy nodes to the mst nodes using dummy edges
+
+
+
+
 4. Start from the cheapest well
 5. Traverse through the MST comparing the cost of adding wells to the houses with the cost of the pipe
     a. If the pipe is less than the cost of adding the well
