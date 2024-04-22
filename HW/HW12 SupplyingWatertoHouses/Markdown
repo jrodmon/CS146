@@ -27,4 +27,28 @@ Implementation:
         int[] pipes = pipes[j]
             pipes[j] = [house1j, house2j, costj]
 
-n = 2, wells = [1,1], pipes = [[1,2,1],[1,2,2]]
+Input: n = 2, wells = [1,1], pipes = [[1,2,1],[1,2,2]]
+
+
+1. dummyNode --> house1
+2. dummyNode --> house2      // # wells
+3. 1 --> 2
+4. 1 --> 2                   // # of pipes
+
+
+arraySize = numOfDummyNodeEdges
+arraySize += numOfEdges
+populate arraySize
+
+sort the array from least to greatest
+run Kruskal's algorithm using Union-Find algorithm
+
+
+
+
+
+
+
+
+
+
