@@ -2,8 +2,8 @@ from typing import List
 
 class Solution:
     def minCostToSupplyWater(self, n: int, wells: List[int], pipes: List[List[int]]) -> int:
-        p = [i for i in range (n+1)]
-        rank = [0] * (n+1)
+        p = [i for i in range (n+1)]        # parent node
+        rank = [0] * (n+1)                  # represents the depth of each node
 
         def find(x):
             if x!= p[x]:
